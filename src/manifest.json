@@ -10,6 +10,10 @@
         "privacyUrl": "https://www.microsoft.com/privacy",
         "termsOfUseUrl": "https://www.microsoft.com/termsofuse"
     },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
     "name": {
         "short": "Hello World Taha",
         "full": "Hello World App for Microsoft Teams node js Taha"
@@ -18,49 +22,65 @@
         "short": "Hello World App for Microsoft Teams",
         "full": "This sample app provides a very simple app for Microsoft Teams. You can extend this to add more content and capabilities."
     },
-    "icons": {
-        "outline": "contoso20x20.png",
-        "color": "contoso96x96.png"
-    },
     "accentColor": "#60A18E",
-    "staticTabs": [{
-        "entityId": "com.contoso.helloworld.hellotab",
-        "name": "Hello Tab",
-        "contentUrl": "https://helloworldaptar.herokuapp.com/hello",
-        "scopes": [
-            "personal"
-        ]
-    }],
-    "configurableTabs": [{
-        "configurationUrl": "https://helloworldaptar.herokuapp.com/configure",
-        "canUpdateConfiguration": true,
-        "scopes": [
-            "team"
-        ]
-    }],
-    "bots": [{
-        "botId": "47e90cce-3f51-4660-9db2-40bf0d6ceaaa",
-        "needsChannelSelector": false,
-        "isNotificationOnly": false,
-        "scopes": [
-            "team",
-            "personal"
-        ]
-    }],
-    "composeExtensions": [{
-        "botId": "47e90cce-3f51-4660-9db2-40bf0d6ceaaa",
-        "commands": [{
-            "id": "getRandomText",
-            "description": "Gets some random text and images that you can insert in messages for fun.",
-            "title": "Get some random text for fun",
-            "initialRun": true,
-            "parameters": [{
-                "name": "cardTitle",
-                "description": "Card title to use",
-                "title": "Card title"
-            }]
-        }]
-    }],
-    "permissions": [],
-    "validDomains": []
+    "configurableTabs": [
+        {
+            "configurationUrl": "https://helloworldaptar.herokuapp.com/configure",
+            "canUpdateConfiguration": true,
+            "scopes": [
+                "team",
+                "groupchat"
+            ]
+        }
+    ],
+    "staticTabs": [
+        {
+            "entityId": "com.contoso.helloworld.hellotab",
+            "name": "Hello Tab",
+            "contentUrl": "https://helloworldaptar.herokuapp.com/hello",
+            "websiteUrl": "https://helloworldaptar.herokuapp.com/hello",
+            "scopes": [
+                "personal"
+            ]
+        }
+    ],
+    "bots": [
+        {
+            "botId": "f9c5f411-683b-43a0-a057-16d68e1be778",
+            "scopes": [
+                "team",
+                "personal"
+            ],
+            "supportsFiles": true,
+            "isNotificationOnly": false
+        }
+    ],
+    "composeExtensions": [
+        {
+            "botId": "47e90cce-3f51-4660-9db2-40bf0d6ceaaa",
+            "canUpdateConfiguration": true,
+            "commands": [
+                {
+                    "id": "getRandomText",
+                    "title": "Get some random text for fun",
+                    "description": "Gets some random text and images that you can insert in messages for fun.",
+                    "initialRun": true,
+                    "parameters": [
+                        {
+                            "name": "cardTitle",
+                            "title": "Card title",
+                            "description": "Card title to use"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+        "helloworldaptar.herokuapp.com"
+    ]
 }
